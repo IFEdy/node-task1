@@ -1,11 +1,30 @@
-1, The difference between 'Undefined' and 'Not defined'.
-    Undefined means a variable is not given a particular value for instance 
-    var x; this variable x is un defines
-    while Not defined means a variable is not declared let alone been given a value.
-    
-2, 1 undefined, 1undefined, 1function
 
-3, The drawback of using a private method is that there is insufficient memory, only few data can be added.
+2, var y = 1;
+        if (function f(){}) {
+        y += typeof f;
+    }
+    console.log(y);
+The output of this code would be undefined.
+
+    var k = 1;
+        if (1) {
+        eval(function foo(){});
+        k += typeof foo;
+        }
+        console.log(k);
+The output for the above code would be undefined.
+
+    var k = 1;
+        if (1) {
+        function foo(){};
+        k += typeof foo;
+        }
+        console.log(k); // output 1function
+The output for the above code would be 1function.
+
+    
+
+3, The drawback of using a private method is that it is memory insufficient, only few data can be added.
 
 4, Closures are functions that are enclosed inside another function and function that has to its own private variables.
 
@@ -15,16 +34,31 @@
     mull(2, 3, 4);
     mull(4, 3, 4);
     
-6, arraylist=[ ];
+The mull returns the multiplication of the arguements that have been passed in another function.
 
-7, var items=['Bags', 'Belt', 'Shoe', 'Short', 'Boxers'];
+6, To empty an array in javascript, there are four methods. For example, in the array below;
+    var arrayList = ['a','b','c','d','e','f'];
+The first is: arraylist=[ ];
+Another is: arrayList.length = 0;
+Yet another is : arrayList.splice(0, arrayList.length);
+ANd the final is : while(arrayList.length){
+                        arrayList.pop();
+                        }
+
+7, To check if an object is an array or not,
+    var items=['Bags', 'Belt', 'Shoe', 'Short', 'Boxers'];
     if(items === array){
     console.log(true);
     }else{
     console.log("items are not array");
     }
     
-8, 0
+8, var output = (function(x){
+    delete x;
+    return x;
+    })(0);
+    console.log(output);
+The output of this code would be 0 because the delete operator can't delete a local variable.
 
 9, No value or 0 or undefined
 
